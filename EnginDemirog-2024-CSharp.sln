@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day2", "Day2", "{DF570BBF-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment1", "Assignment1", "{F3D4C34D-A36A-42B8-88B8-8D8CDBC15FB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2Assignment1", "Assignment1\Day2Assignment1.csproj", "{5455CF7B-BBBD-4A56-AE2E-885D1D1F95E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2Assignment1", "Day2Assignment1\Day2Assignment1.csproj", "{5455CF7B-BBBD-4A56-AE2E-885D1D1F95E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecapDemo", "RecapDemo\RecapDemo.csproj", "{E91316AC-DE36-4715-9F4C-C9B8A7827B27}"
 EndProject
