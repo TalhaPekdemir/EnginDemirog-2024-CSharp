@@ -30,5 +30,10 @@ namespace Day2Assignment3.Business.Abstract
         {
             _entityDal.Update(id, entity);
         }
+
+        public virtual T GetById(int id)
+        {
+            return  _entityDal.GetById(id);
+        }
     }
 }

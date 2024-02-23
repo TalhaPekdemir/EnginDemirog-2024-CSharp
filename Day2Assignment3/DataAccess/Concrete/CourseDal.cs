@@ -1,5 +1,4 @@
 ﻿using Day2Assignment3.DataAccess.Abstract;
-using Day2Assignment3.Entities.Abstarct;
 using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.DataAccess.Concrete;
@@ -30,6 +29,11 @@ public class CourseDal : IEntityDal<Course>
     public List<Course> GetAll()
     {
         return _courses;
+    }
+
+    public Course GetById(int id)
+    {
+        return _courses.Find(c=> c.Id == id);
     }
 
     public void Update(int id, Course course)

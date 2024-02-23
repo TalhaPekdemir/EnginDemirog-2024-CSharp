@@ -29,6 +29,11 @@ public class CategoryDal : IEntityDal<Category>
         return _categories;
     }
 
+    public Category GetById(int id)
+    {
+        return _categories.Find(c => c.Id == id);
+    }
+
     public void Update(int id, Category entity)
     {
         var result = _categories.FindIndex(c => c.Id == id);

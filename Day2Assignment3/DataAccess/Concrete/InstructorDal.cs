@@ -10,8 +10,8 @@ public class InstructorDal : IEntityDal<Instructor>
     {
         _instructors = new List<Instructor>()
         {
-            new Instructor(){ Id=1, FirstName="Engin", LastName="Demirog" },
-            new Instructor(){ Id=2, FirstName="Halit Enes", LastName="Kalaycı" }
+            new Instructor(){ Id=1, FirstName="Engin", LastName="Demirog", Image="engindemirog.png" },
+            new Instructor(){ Id=2, FirstName="Halit Enes", LastName="Kalaycı", Image = "haliteneskalayci.png" }
         };
     }
 
@@ -28,6 +28,11 @@ public class InstructorDal : IEntityDal<Instructor>
     public List<Instructor> GetAll()
     {
         return _instructors;
+    }
+
+    public Instructor GetById(int id)
+    {
+        return _instructors.Find(i => i.Id == id);
     }
 
     public void Update(int id, Instructor entity)
