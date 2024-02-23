@@ -4,37 +4,37 @@ using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.Business.Concrete;
 
-public class CategoryManager : BaseEntityService<Category>
+public class CategoryManager : ICategoryService
 {
-    public CategoryManager(IEntityDal<Category> entityDal) : base(entityDal)
-    { }
+    private readonly ICategoryDal _categoryDal;
 
-    public override void Add(Category entity)
+    public CategoryManager(ICategoryDal categoryDal)
     {
-        // iş kodları validasyon vs.
-        base.Add(entity);
+        this._categoryDal = categoryDal;
     }
 
-    public override void Delete(Category entity)
+    public void Add(Category category)
     {
-        // iş kodları validasyon vs.
-        base.Delete(entity);
+        _categoryDal.Add(category);
     }
 
-    public override List<Category> GetAll()
+    public void Delete(Category category)
     {
-        // iş kodları validasyon vs.
-        return base.GetAll();
+        _categoryDal.Delete(category);
     }
 
-    public override void Update(int id, Category entity)
+    public List<Category> GetAll()
     {
-        // iş kodları validasyon vs.
-        base.Update(id, entity);
+        return _categoryDal.GetAll();
     }
 
-    public override Category GetById(int id)
+    public Category GetById(int id)
     {
-        return base.GetById(id);
+        return _categoryDal.GetById(id);
+    }
+
+    public void Update(int id, Category category)
+    {
+        _categoryDal.Update(id, category);
     }
 }

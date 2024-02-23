@@ -4,38 +4,37 @@ using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.Business.Concrete;
 
-public class InstructorManager : BaseEntityService<Instructor>
+public class InstructorManager : IInstructorService
 {
-    public InstructorManager(IEntityDal<Instructor> entityDal) : base(entityDal)
+    private readonly IInstructorDal _instructorDal;
+
+    public InstructorManager(IInstructorDal instructorDal)
     {
+        _instructorDal = instructorDal;
     }
 
-    public override List<Instructor> GetAll()
+    public void Add(Instructor instructor)
     {
-        // iş kodları validasyon vs.
-        return base.GetAll();
+        _instructorDal.Add(instructor);
     }
 
-    public override void Add(Instructor entity)
+    public void Delete(Instructor instructor)
     {
-        // iş kodları validasyon vs.
-        base.Add(entity);
+        _instructorDal.Delete(instructor);
     }
 
-    public override void Delete(Instructor entity)
+    public List<Instructor> GetAll()
     {
-        // iş kodları validasyon vs.
-        base.Delete(entity);
+        return _instructorDal.GetAll();
     }
 
-    public override void Update(int id, Instructor entity)
+    public Instructor GetById(int id)
     {
-        // iş kodları validasyon vs.
-        base.Update(id, entity);
+        return _instructorDal.GetById(id);
     }
 
-    public override Instructor GetById(int id)
+    public void Update(int id, Instructor instructor)
     {
-        return base.GetById(id);
+        _instructorDal.Update(id, instructor);
     }
 }

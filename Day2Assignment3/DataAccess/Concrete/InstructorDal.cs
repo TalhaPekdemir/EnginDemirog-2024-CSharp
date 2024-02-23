@@ -3,7 +3,7 @@ using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.DataAccess.Concrete;
 
-public class InstructorDal : IEntityDal<Instructor>
+public class InstructorDal : IInstructorDal
 {
     List<Instructor> _instructors;
     public InstructorDal()

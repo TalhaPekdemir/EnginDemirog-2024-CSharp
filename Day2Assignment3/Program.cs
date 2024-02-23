@@ -1,7 +1,6 @@
-﻿using Day2Assignment3.Business.Abstract;
-using Day2Assignment3.Business.Concrete;
+﻿using Day2Assignment3.Business.Concrete;
 using Day2Assignment3.DataAccess.Concrete;
-using Day2Assignment3.Entities.Abstarct;
+
 using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3
@@ -21,7 +20,7 @@ namespace Day2Assignment3
                 Image = "default.png"
             };
 
-            BaseEntityService<Instructor> instructorManager = new InstructorManager(new InstructorDal());
+            InstructorManager instructorManager = new InstructorManager(new InstructorDal());
             
             // insructor ekle
             instructorManager.Add(instructor);
@@ -46,7 +45,7 @@ namespace Day2Assignment3
                 Name = "Test Ctg"
             };
 
-            BaseEntityService<Category> categoryManager = new CategoryManager(new CategoryDal());
+            CategoryManager categoryManager = new CategoryManager(new CategoryDal());
             
             // category ekle
             categoryManager.Add(category);
@@ -79,21 +78,21 @@ namespace Day2Assignment3
                 PercentDone = 0
             };
 
-            BaseEntityService<Course> courseService = new CourseManager(new CourseDal());
+            CourseManager courseManager = new CourseManager(new CourseDal());
 
             // course ekle
-            courseService.Add(course);
-            ListCourses(courseService.GetAll());
+            courseManager.Add(course);
+            ListCourses(courseManager.GetAll());
 
             // course güncelle
-            var courseToUpdate = courseService.GetById(4);
+            var courseToUpdate = courseManager.GetById(4);
             courseToUpdate.PercentDone = 35;
-            courseService.Update(courseToUpdate.Id, courseToUpdate);
-            ListCourses(courseService.GetAll());
+            courseManager.Update(courseToUpdate.Id, courseToUpdate);
+            ListCourses(courseManager.GetAll());
 
             // course sil
-            courseService.Delete(courseToUpdate);
-            ListCourses(courseService.GetAll());
+            courseManager.Delete(courseToUpdate);
+            ListCourses(courseManager.GetAll());
         }
 
         public static void ListInstructors(List<Instructor> instructors)

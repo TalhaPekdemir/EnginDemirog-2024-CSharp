@@ -3,7 +3,7 @@ using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.DataAccess.Concrete;
 
-public class CategoryDal : IEntityDal<Category>
+public class CategoryDal : ICategoryDal
 {
     List<Category> _categories;
     public CategoryDal()

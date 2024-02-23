@@ -4,37 +4,37 @@ using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.Business.Concrete;
 
-public class CourseManager : BaseEntityService<Course>
+public class CourseManager : ICourseService
 {
-    public CourseManager(IEntityDal<Course> entityDal) : base(entityDal)
-    { }
+    private readonly ICourseDal _courseDal;
 
-    public override void Add(Course entity)
+    public CourseManager(ICourseDal courseDal)
     {
-        // iş kodları validasyon vs.
-        base.Add(entity);
+        _courseDal = courseDal;
     }
 
-    public override void Delete(Course entity)
+    public void Add(Course course)
     {
-        // iş kodları validasyon vs.
-        base.Delete(entity);
+        _courseDal.Add(course);
     }
 
-    public override List<Course> GetAll()
+    public void Delete(Course course)
     {
-        // iş kodları validasyon vs.
-        return base.GetAll();
+        _courseDal.Delete(course);
     }
 
-    public override void Update(int id, Course entity)
+    public List<Course> GetAll()
     {
-        // iş kodları validasyon vs.
-        base.Update(id, entity);
+        return _courseDal.GetAll();
     }
 
-    public override Course GetById(int id)
+    public Course GetById(int id)
     {
-        return base.GetById(id);
+        return _courseDal.GetById(id);
+    }
+
+    public void Update(int id, Course course)
+    {
+        _courseDal.Update(id, course);
     }
 }

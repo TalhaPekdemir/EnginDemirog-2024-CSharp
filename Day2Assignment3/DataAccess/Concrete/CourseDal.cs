@@ -3,8 +3,8 @@ using Day2Assignment3.Entities.Concrete;
 
 namespace Day2Assignment3.DataAccess.Concrete;
 
-public class CourseDal : IEntityDal<Course>
-{
+public class CourseDal : ICourseDal
+{ 
     List<Course> _courses;
     public CourseDal()
     {
