@@ -8,7 +8,9 @@ internal class Program
 {
     static void Main(string[] args)
     {
+        // ***********************************************************************
         // Ders 1
+        // ***********************************************************************
 
         // variables -> camelCase
         string message = "Krediler";
@@ -71,7 +73,9 @@ internal class Program
             Console.WriteLine($"Kurs adı: {courses[i].Name} Kurs Fiyatı: {courses[i].Price}");
         }
 
+        // ***********************************************************************
         // Ders 2
+        // ***********************************************************************
 
         IndividualCustomer customer1 = new IndividualCustomer
         {
